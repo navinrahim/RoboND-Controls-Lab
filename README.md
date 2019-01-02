@@ -212,4 +212,22 @@ If using the VM, inside the simulator's `_data` or `/Contents` folder, edit `ros
 
 To find the ip of your VM, type `echo $(hostname -I)` into a terminal of your choice. **Be aware that the ip address of your VM can change. If you are experiencing problems, be sure to check that the VM's ip matches that of which you have in ros_settings.txt**
 
-**Note: Be sure to use at least V2.1.0 of the Udacity provided VM for this lab**
+## General changes in ros_settings.txt
+
+If running in your native Linux system, we need to change the following in the `ros_settings.txt`
+
+- `vm-override` should be false and `host-override` should be true. This means we do not override the vm as we are using the native system.
+
+- Next step is to set the rosmaster details. Usually, when we run `roscore`, the rosmaster is started in `127.0.0.1:11311`. This can be seen when `roscore` is ran, as the terminal shows 
+
+  ```sh
+  ROS_MASTER_URI=http://username:11311/
+  ```
+
+  These can be set in `ros_settings.txt` as follows:
+  
+  ```
+  "vm-ip" : "127.0.0.1",
+	"vm-port" : 11311,
+	"vm-override" : false
+  ```
