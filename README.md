@@ -214,7 +214,7 @@ To find the ip of your VM, type `echo $(hostname -I)` into a terminal of your ch
 
 ## General changes in ros_settings.txt
 
-If running in your native Linux system, we need to change the following in the `ros_settings.txt`
+If running in your native Linux system, we need to change the following in the `ros_settings.txt`. This file can be found in the `DroneSim_Lin_Data` folder in the simulator folder for Linux.
 
 - `vm-override` should be false and `host-override` should be true. This means we do not override the vm as we are using the native system.
 
@@ -231,3 +231,16 @@ If running in your native Linux system, we need to change the following in the `
 	"vm-port" : 11311,
 	"vm-override" : false
   ```
+
+# Launching the simulator
+Go to the simulator folder, open a terminal in this folder and type
+
+```sh
+./DroneSim_Lin.x86_64
+```
+
+For getting the screen resolution setup use
+
+```sh
+./DroneSim_Lin.x86_64 -show-screen-selector
+```
