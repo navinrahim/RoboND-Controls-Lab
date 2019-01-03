@@ -89,7 +89,7 @@ class PIDController:
         elif self.error_sum_ < -self.max_windup_:
             self.error_sum_ = -self.max_windup_
         ########################################
-        
+
         # Proportional error
         p = self.kp_ * error
        
@@ -98,7 +98,6 @@ class PIDController:
 
         # Derivative error
         d = self.kd_ * delta_error / delta_time
-        
         # Set the control effort
         u = p + i + d
     
